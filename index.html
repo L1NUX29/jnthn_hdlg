@@ -66,3 +66,40 @@
       }
       .btn {
         width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container w3-animate-zoom">
+    <p id="question"><span>Crush mo'ko no?</span></p>
+    <button class="btn" id="Oo"><b>Oo</b></button>
+    <button class="btn" id="Hinde"><b>Hinde</b></button>
+    <footer>Created by jnthn_hdlg</footer>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('Hinde');
+    const yesBtn = document.getElementById('Oo');
+    const ques = document.getElementById('question');
+
+    // Random move function
+    function moveButton() {
+      const maxX = window.innerWidth - 100;
+      const maxY = window.innerHeight - 150;
+      const randX = Math.floor(Math.random() * maxX);
+      const randY = Math.floor(Math.random() * maxY);
+      noBtn.style.transform = `translate(${randX}px, ${randY}px)`;
+    }
+
+    // Works for both desktop + mobile
+    noBtn.addEventListener('mouseover', moveButton);
+    noBtn.addEventListener('touchstart', moveButton);
+
+    yesBtn.addEventListener("click", () => {
+      ques.innerHTML = "Ikaw Haaaaa HAHAHAHAHA <3";
+    });
+  </script>
+</body>
+</html>
