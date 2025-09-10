@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Make it responsive on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Pindutin mo nalang yun Oo<3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+      position: relative;
+    }
+    #Hinde {
+      position: absolute; /* Needed so we can move it */
+    }
+  </style>
+</head>
+<body>
+  <div class="w3-container w3-center w3-animate-zoom">
+    <div class="wrapper">
+      <div class="container">
+        <p id="question"><span>Crush mo'ko no?</span></p>
+        <button class="btn" id="Oo"><b>Oo</b></button>
+        <button class="btn" id="Hinde"><b>Hinde</b></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('Hinde');
+    const yesBtn = document.getElementById('Oo');
+    const ques = document.getElementById('question');
+
+    // Function to move "Hinde" randomly
+    function moveButton() {
+      const randX = Math.floor(Math.random() * 200) - 100; // random left/right
+      const randY = Math.floor(Math.random() * 200) - 100; // random up/down
+      noBtn.style.transform = `translate(${randX}px, ${randY}px)`;
+    }
+
+    // For desktop (mouse hover)
+    noBtn.addEventListener('mouseover', moveButton);
+
+    // For mobile (tap)
+    noBtn.addEventListener('touchstart', moveButton);
+
+    // "Oo" button action
+    yesBtn.addEventListener("click", () => {
+      ques.innerHTML = "Ikaw Haaaaa HAHAHAHAHA <3";
+    });
+  </script>
+
+  <div>
+    <p>Created by jnthn_hdlg</p>
+  </div>
+</body>
+</html>
