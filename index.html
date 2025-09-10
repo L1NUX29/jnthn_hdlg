@@ -3,71 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Make it responsive on mobile -->
+  <!-- Responsive on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="style.css">
   <title>Pindutin mo nalang yun Oo<3</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <style>
     body {
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f9f9f9;
       text-align: center;
-      padding-top: 50px;
     }
+
+    .container {
+      max-width: 400px;
+      width: 90%;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    #question {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
     .btn {
-      padding: 10px 20px;
+      display: inline-block;
+      padding: 12px 24px;
       margin: 10px;
       border: none;
-      border-radius: 8px;
-      background: #4CAF50;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
       color: white;
-      font-size: 18px;
+      background: #4CAF50;
       cursor: pointer;
-      transition: 0.2s;
+      transition: 0.3s;
       position: relative;
     }
+
     #Hinde {
-      position: absolute; /* Needed so we can move it */
-    }
-  </style>
-</head>
-<body>
-  <div class="w3-container w3-center w3-animate-zoom">
-    <div class="wrapper">
-      <div class="container">
-        <p id="question"><span>Crush mo'ko no?</span></p>
-        <button class="btn" id="Oo"><b>Oo</b></button>
-        <button class="btn" id="Hinde"><b>Hinde</b></button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const noBtn = document.getElementById('Hinde');
-    const yesBtn = document.getElementById('Oo');
-    const ques = document.getElementById('question');
-
-    // Function to move "Hinde" randomly
-    function moveButton() {
-      const randX = Math.floor(Math.random() * 200) - 100; // random left/right
-      const randY = Math.floor(Math.random() * 200) - 100; // random up/down
-      noBtn.style.transform = `translate(${randX}px, ${randY}px)`;
+      background: #f44336;
+      position: absolute; /* allows it to move around */
     }
 
-    // For desktop (mouse hover)
-    noBtn.addEventListener('mouseover', moveButton);
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #555;
+    }
 
-    // For mobile (tap)
-    noBtn.addEventListener('touchstart', moveButton);
-
-    // "Oo" button action
-    yesBtn.addEventListener("click", () => {
-      ques.innerHTML = "Ikaw Haaaaa HAHAHAHAHA <3";
-    });
-  </script>
-
-  <div>
-    <p>Created by jnthn_hdlg</p>
-  </div>
-</body>
-</html>
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      #question {
+        font-size: 1.2rem;
+      }
+      .btn {
+        width: 100%;
